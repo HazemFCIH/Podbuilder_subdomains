@@ -10,7 +10,7 @@ class PodcastController extends Controller
 
     public function index()
     {
-        $f = \FeedReader::read('https://www.omnycontent.com/d/playlist/5a56d7c3-f281-4557-8e31-aac8017ccf06/e7f15ef0-c09f-41b6-bd38-ab0500c045ef/697481d2-88df-4eb3-bf72-ab0500c29e9f/podcast.rss');
+        $f = \FeedReader::read('https://feeds.redcircle.com/848c9c3c-38e1-4660-8b97-99027b5ee77a');
         $f->handle_content_type();
         // feed level
         $podcast = [];
@@ -31,6 +31,7 @@ class PodcastController extends Controller
             $episodes[$i]['episode_auhtor_name'] = $item->get_author()->get_name();
             $episodes[$i]['episode_title'] = $item->get_title();
             $episodes[$i]['episode_description'] = $item->get_description();
+            $episodes[$i]['episode_content'] = $item->get_content();
             $episodes[$i]['episode_date'] = $item->get_date();
             $episodes[$i]['episode_id'] = $item->get_id();
             // item  enclosure level

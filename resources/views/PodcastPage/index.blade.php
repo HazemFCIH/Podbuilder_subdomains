@@ -36,154 +36,59 @@
                 </div>
             </div>
 
+            @foreach($episodes as $episode)
             <!-- RSS ATTRIBUTE! Recent Episode in descending order -->
             <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
                 <!-- RSS ATTRIBUTE! Episode details [image] -->
-                <div class="image" style="background-image: url('images/img_1.jpg');"></div>
+                <div class="image" style="background-image: url(
+                @if(isset($episode['episode_image']))
+                {{$episode['episode_image']}}
+                @else
+                {{$podcast['image_path']}}
+                @endif
+
+                    );"></div>
                 <div class="text">
                     <!-- RSS ATTRIBUTE! Episode details [title] -->
-                    <h3 class="font-weight-light"><a href="episode-page.html">Episode 08: How To Create Web Page Using Bootstrap
-                            4</a></h3>
+                    <h3 class="font-weight-light"><a href="episode-page.html">{{$episode['episode_title']}}</a></h3>
                     <!-- RSS ATTRIBUTE! Episode meta date [author, date, length] -->
-                    <div class="text-white mb-3"><span class="text-black-opacity-05"><small>By Mike Smith <span
-                                    class="sep">/</span> 16 September 2017 <span class="sep">/</span> 1:30:20</small></span></div>
+                    <div class="text-white mb-3"><span class="text-black-opacity-05"><small>{{$episode['episode_auhtor_name']}} <span
+                                    class="sep">/</span> {{$episode['episode_date']}}</small></span></div>
                     <!-- RSS ATTRIBUTE! Episode meta date [description or summary] -->
-                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti repellat mollitia
-                        consequatur, optio nesciunt placeat. Iste voluptates excepturi tenetur, nesciunt.</p>
+                    <p class="mb-4">{!!  $episode['episode_content']!!}</p>
 
                     <div class="player">
                         <audio id="player2" preload="none" controls style="max-width: 100%">
                             <!-- RSS ATTRIBUTE! Latest Episode .mp3 -->
-                            <source src="http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3" type="audio/mp3">
+                            <source src="{{$episode['episode_audio']}}" type="audio/mp3">
                         </audio>
                     </div>
 
                 </div>
             </div>
+                @endforeach
 
 
-            <!-- RSS ATTRIBUTE! Recent Episode in descending order -->
-            <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
-                <!-- RSS ATTRIBUTE! Episode details [image] -->
-                <div class="image" style="background-image: url('images/img_2.jpg');"></div>
-                <div class="text">
-                    <!-- RSS ATTRIBUTE! Episode details [title] -->
-                    <h3 class="font-weight-light"><a href="episode-page.html">Episode 07: How To Create Web Page Using Bootstrap
-                            4</a></h3>
-                    <!-- RSS ATTRIBUTE! Episode meta date [author, date, length] -->
-                    <div class="text-white mb-3"><span class="text-black-opacity-05"><small>By Mike Smith <span
-                                    class="sep">/</span> 16 September 2017 <span class="sep">/</span> 1:30:20</small></span></div>
-                    <!-- RSS ATTRIBUTE! Episode meta date [description] -->
-                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti repellat mollitia
-                        consequatur, optio nesciunt placeat. Iste voluptates excepturi tenetur, nesciunt.</p>
-
-                    <div class="player">
-                        <audio id="player2" preload="none" controls style="max-width: 100%">
-                            <!-- RSS ATTRIBUTE! Latest Episode .mp3 -->
-                            <source src="http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3" type="audio/mp3">
-                        </audio>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <!-- RSS ATTRIBUTE! Recent Episode in descending order -->
-            <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
-                <!-- RSS ATTRIBUTE! Episode details [image] -->
-                <div class="image" style="background-image: url('images/img_3.jpg');"></div>
-                <div class="text">
-                    <!-- RSS ATTRIBUTE! Episode details [title] -->
-                    <h3 class="font-weight-light"><a href="episode-page.html">Episode 06: How To Create Web Page Using Bootstrap
-                            4</a></h3>
-                    <!-- RSS ATTRIBUTE! Episode meta date [author, date, length] -->
-                    <div class="text-white mb-3"><span class="text-black-opacity-05"><small>By Mike Smith <span
-                                    class="sep">/</span> 16 September 2017 <span class="sep">/</span> 1:30:20</small></span></div>
-                    <!-- RSS ATTRIBUTE! Episode meta date [description] -->
-                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti repellat mollitia
-                        consequatur, optio nesciunt placeat. Iste voluptates excepturi tenetur, nesciunt.</p>
-
-                    <div class="player">
-                        <audio id="player2" preload="none" controls style="max-width: 100%">
-                            <!-- RSS ATTRIBUTE! Latest Episode .mp3 -->
-                            <source src="http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3" type="audio/mp3">
-                        </audio>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <!-- RSS ATTRIBUTE! Recent Episode in descending order -->
-            <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
-                <!-- RSS ATTRIBUTE! Episode details [image] -->
-                <div class="image" style="background-image: url('images/img_4.jpg');"></div>
-                <div class="text">
-                    <!-- RSS ATTRIBUTE! Episode details [title] -->
-                    <h3 class="font-weight-light"><a href="episode-page.html">Episode 05: How To Create Web Page Using Bootstrap
-                            4</a></h3>
-                    <!-- RSS ATTRIBUTE! Episode meta date [author, date, length] -->
-                    <div class="text-white mb-3"><span class="text-black-opacity-05"><small>By Mike Smith <span
-                                    class="sep">/</span> 16 September 2017 <span class="sep">/</span> 1:30:20</small></span></div>
-                    <!-- RSS ATTRIBUTE! Episode meta date [description] -->
-                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti repellat mollitia
-                        consequatur, optio nesciunt placeat. Iste voluptates excepturi tenetur, nesciunt.</p>
-
-                    <div class="player">
-                        <audio id="player2" preload="none" controls style="max-width: 100%">
-                            <!-- RSS ATTRIBUTE! Latest Episode .mp3 -->
-                            <source src="http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3" type="audio/mp3">
-                        </audio>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <!-- RSS ATTRIBUTE! Recent Episode in descending order -->
-            <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
-                <!-- RSS ATTRIBUTE! Episode details [image] -->
-                <div class="image" style="background-image: url('images/img_5.jpg');"></div>
-                <div class="text">
-                    <!-- RSS ATTRIBUTE! Episode details [title] -->
-                    <h3 class="font-weight-light"><a href="episode-page.html">Episode 04: How To Create Web Page Using Bootstrap
-                            4</a></h3>
-                    <!-- RSS ATTRIBUTE! Episode meta date [author, date, length] -->
-                    <div class="text-white mb-3"><span class="text-black-opacity-05"><small>By Mike Smith <span
-                                    class="sep">/</span> 16 September 2017 <span class="sep">/</span> 1:30:20</small></span></div>
-                    <!-- RSS ATTRIBUTE! Episode meta date [description] -->
-                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti repellat mollitia
-                        consequatur, optio nesciunt placeat. Iste voluptates excepturi tenetur, nesciunt.</p>
-
-                    <div class="player">
-                        <audio id="player2" preload="none" controls style="max-width: 100%">
-                            <!-- RSS ATTRIBUTE! Latest Episode .mp3 -->
-                            <source src="http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3" type="audio/mp3">
-                        </audio>
-                    </div>
-
-                </div>
-            </div>
 
 
         </div>
-        <div class="container" data-aos="fade-up">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="site-block-27">
-                        <ul>
-                            <li><a href="#">&lt;</a></li>
-                            <li class="active"><span>1</span></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">&gt;</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+{{--        <div class="container" data-aos="fade-up">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-md-12 text-center">--}}
+{{--                    <div class="site-block-27">--}}
+{{--                        <ul>--}}
+{{--                            <li><a href="#">&lt;</a></li>--}}
+{{--                            <li class="active"><span>1</span></li>--}}
+{{--                            <li><a href="#">2</a></li>--}}
+{{--                            <li><a href="#">3</a></li>--}}
+{{--                            <li><a href="#">4</a></li>--}}
+{{--                            <li><a href="#">5</a></li>--}}
+{{--                            <li><a href="#">&gt;</a></li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
 
     <div class="site-section">
