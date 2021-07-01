@@ -20,6 +20,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/webpage', function (){
-    return view('webpage.index');
+Route::get('/landing-page', function (){
+    return view('LandingPage.index');
 });
+Route::get('/podcast-page', function (){
+    return view('PodcastPage.index');
+});
+

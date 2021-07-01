@@ -9,7 +9,7 @@
 @endsection
 @section('mid-section')
     <div class="col-lg-5 d-none d-lg-block side_image">
-        <img src="{{asset('images/person_1.jpg')}}" class="img-thumbnail border-0 rounded-0 p-0" alt="...">
+        <img src="{{asset('assets/frontend/images/person_1.jpg')}}" class="img-thumbnail border-0 rounded-0 p-0" alt="...">
     </div>
     <div class="col-lg-6">
         <div class="p-5">
