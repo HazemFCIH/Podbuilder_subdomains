@@ -1,23 +1,22 @@
 @extends('layouts.frontend.PodcastPage.app')
 @section('top-section')
-    <div class="site-blocks-cover overlay" style="background-image: url({{asset('assets/frontend/images/hero_bg_1.jpg')}});" data-aos="fade"
+    <div class="site-blocks-cover overlay" style="background-image: url({{$podcast['image_path']}});" data-aos="fade"
          data-stellar-background-ratio="0.5">
         <div class="container">
             <div class="row align-items-center justify-content-center text-center">
 
                 <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
                     <!-- RSS ATTRIBUTE! Latest Episode -->
-                    <h2 class="text-white font-weight-light mb-2 display-4">Episode 09: How To Create Web Page Using Bootstrap 4
+                    <h2 class="text-white font-weight-light mb-2 display-4">{{$episodes[0]['episode_title']}}
                     </h2>
                     <!-- RSS ATTRIBUTE! Episode meta date [author, date, length] -->
-                    <div class="text-white mb-4"><span class="text-white-opacity-05"><small>By Mike Smith | 16 September 2017 |
-                  1:30:20</small></span></div>
+                    <div class="text-white mb-4"><span class="text-white-opacity-05"><small>{{$episodes[0]['episode_auhtor_name']}} |  {{$episodes[0]['episode_date']}}</small></span></div>
                     <p><a href="episode-page.html" class="btn btn-primary btn-sm py-3 px-4 small">Episode details</a></p>
 
                     <div class="player">
                         <audio id="player2" preload="none" controls style="max-width: 100%">
                             <!-- RSS ATTRIBUTE! Latest Episode .mp3 -->
-                            <source src="http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3" type="audio/mp3">
+                            <source src="{{$episodes[0]['episode_audio']}}" type="audio/mp3">
                         </audio>
                     </div>
 

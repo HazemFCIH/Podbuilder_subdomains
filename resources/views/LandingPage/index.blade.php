@@ -3,9 +3,9 @@
     <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
         <h2 class="text-white font-weight-light mb-2 display-4">Podbuilder is your powerful tool to build your
             podcast presence
-        </h2>
+        </h2>ddd
         <p><a href="login.html" class="btn btn-info btn-sm py-3 px-4 mt-5 small">Create my Podsite</a></p>
-    </div>
+    </div>sdsdsds
 @endsection
 @section('mid-section')
     <div class="col-lg-5 d-none d-lg-block side_image">

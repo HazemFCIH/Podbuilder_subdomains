@@ -1,3 +1,4 @@
+
 <div class="site-mobile-menu">
     <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close mt-3">
@@ -15,7 +16,7 @@
 
             <div class="col-3" data-aos="fade-down">
                 <!-- RSS ATTRIBUTE! Podcast Name -->
-                <h1><a href="index.html" class="text-white h2">Ask Designer Podcast</a></h1>
+                <h1><a href="index.html" class="text-white h2">{{$podcast['title']}}</a></h1>
             </div>
             <div class="col-9" data-aos="fade-down">
                 <nav class="site-navigation position-relative text-right text-md-right" role="navigation">

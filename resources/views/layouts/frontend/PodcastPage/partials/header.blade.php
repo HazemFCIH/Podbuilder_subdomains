@@ -1,7 +1,7 @@
 
 <head>
     <!-- RSS ATTRIBUTE! Podcast Name ______ Tag Line -->
-    <title>Ask Desginer &mdash; </title>
+    <title>{{$podcast['title']}} &mdash; </title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
