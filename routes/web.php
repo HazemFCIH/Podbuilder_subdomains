@@ -26,4 +26,5 @@ Route::get('/landing-page', function (){
 Route::get('/podcast-page', function (){
     return view('PodcastPage.index');
 });
-
+Route::resource('podcasts',\App\Http\Controllers\PodcastController::class);
+Route::resource('episodes',\App\Http\Controllers\EpisodeController::class);
