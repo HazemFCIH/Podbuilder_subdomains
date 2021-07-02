@@ -106,7 +106,44 @@ class PodcastController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(['rss_feed'=> 'required']);
+        if (filter_var($request->rss_feed, FILTER_VALIDATE_URL)) {
+            $f = \FeedReader::read($request->rss_feed);
+            $f->handle_content_type();
+            if(isset($f->get_items()[0])){
+                $rss_type = $f->get_items()[0]->get_enclosure()->get_type();
+                if (str_contains($rss_type, 'audio')) {
+
+                    $sub_domain = uniqid('mypodcast-');
+                    $podcast_title = $f->get_title();
+                    $podcast_description =   $f->get_description();
+                    $podcast_image=     $f->get_image_url();
+                    $podcast_language =$f->get_language();
+                    $podcast_author=$f->get_author()->get_name();
+                    $podcast_premalink = $f->get_permalink();
+                    Podcast::create([
+                        'sub_domain' =>$sub_domain,
+                        'rss_feed' =>$request->rss_feed,
+                        'podcast_title' =>$podcast_title,
+                        'podcast_description' =>$podcast_description,
+                        'podcast_image' =>$podcast_image,
+                        'podcast_language' =>$podcast_language,
+                        'podcast_author' =>$podcast_author,
+                        'podcast_premalink' =>$podcast_premalink,
+                    ]);
+                    return redirect()->route('subdomain.welcome',$sub_domain);
+
+                } else {
+                    return redirect()->back();
+                }
+            }else{
+                return redirect()->back();
+
+            }
+
+        }else{
+            return redirect()->back();
+        }
     }
 
     /**

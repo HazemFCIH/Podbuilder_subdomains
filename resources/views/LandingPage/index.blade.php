@@ -3,7 +3,7 @@
     <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
         <h2 class="text-white font-weight-light mb-2 display-4">Podbuilder is your powerful tool to build your
             podcast presence
-        </h2>ddd
+        </h2>
         <p><a href="login.html" class="btn btn-info btn-sm py-3 px-4 mt-5 small">Create my Podsite</a></p>
     </div>sdsdsds
 @endsection
@@ -16,17 +16,17 @@
             <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4 text-capitalize">create my podcast website</h1>
             </div>
-            <form class="user">
+            <form class="user" method="post" action="{{route('podcasts.store')}}">
+                @method('POST')
+                @csrf
                 <div class="form-group">
+                    @include('layouts.general._errors')
                     <input type="text" class="form-control form-control-user" id="exampleInputRss"
-                           aria-describedby="rss" placeholder="ENTER PODCAST RSS FEED...">
+                           aria-describedby="rss" name="rss_feed" placeholder="ENTER PODCAST RSS FEED...">
                 </div>
-                <div class="form-group">
-                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                           aria-describedby="emailHelp" placeholder="ENTER THE EMAIL ASSOCIATED WITH RSS...">
-                </div>
-                <p><a href="index.html" class="btn btn-info btn-sm py-3 px-4 small btn-block">Create my
-                        Podsite</a>
+
+                <p><input type="submit" class="btn btn-info btn-sm py-3 px-4 small btn-block" value="Create my
+                        Podsite">
                 </p>
 
             </form>

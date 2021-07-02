@@ -72,23 +72,7 @@
 
 
         </div>
-{{--        <div class="container" data-aos="fade-up">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-md-12 text-center">--}}
-{{--                    <div class="site-block-27">--}}
-{{--                        <ul>--}}
-{{--                            <li><a href="#">&lt;</a></li>--}}
-{{--                            <li class="active"><span>1</span></li>--}}
-{{--                            <li><a href="#">2</a></li>--}}
-{{--                            <li><a href="#">3</a></li>--}}
-{{--                            <li><a href="#">4</a></li>--}}
-{{--                            <li><a href="#">5</a></li>--}}
-{{--                            <li><a href="#">&gt;</a></li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
+
     </div>
 
     <div class="site-section">
@@ -103,7 +87,7 @@
                     <div class="team-member">
 
                         <!-- DASHBOARD ATTRIBUTE! Host Image -->
-                        <img src="images/person_1.jpg" alt="Image" class="img-fluid">
+                        <img src="{{asset('assets/frontend/images/person_1.jpg')}}" alt="Image" class="img-fluid">
 
                         <div class="text">
                             <!-- DASHBOARD ATTRIBUTE! Host Name -->
@@ -126,7 +110,7 @@
                 <div class="col-md-6 col-lg-6 mb-5 mb-lg-5">
                     <div class="team-member">
                         <!-- DASHBOARD ATTRIBUTE! Host Image -->
-                        <img src="images/person_2.jpg" alt="Image" class="img-fluid">
+                        <img src="{{asset('assets/frontend/images/person_2.jpg')}}" alt="Image" class="img-fluid">
 
                         <div class="text">
                             <!-- DASHBOARD ATTRIBUTE! Host Name -->
@@ -162,7 +146,7 @@
                 <div class="text-center p-3 p-md-5 bg-white">
                     <div class="mb-4">
                         <!-- DASHBOARD ATTRIBUTE! Guest Image -->
-                        <img src="images/person_1.jpg" alt="Image" class="w-50 mx-auto img-fluid rounded-circle">
+                        <img src="{{asset('assets/frontend/images/person_1.jpg')}}" alt="Image" class="w-50 mx-auto img-fluid rounded-circle">
                     </div>
                     <div class="">
                         <!-- DASHBOARD ATTRIBUTE! Guest Name -->
@@ -184,7 +168,7 @@
                 <div class="text-center p-3 p-md-5 bg-white">
                     <div class="mb-4">
                         <!-- DASHBOARD ATTRIBUTE! Guest Image -->
-                        <img src="images/person_2.jpg" alt="Image" class="w-50 mx-auto img-fluid rounded-circle">
+                        <img src="{{asset('assets/frontend/images/person_2.jpg')}}" alt="Image" class="w-50 mx-auto img-fluid rounded-circle">
                     </div>
                     <div class="">
                         <!-- DASHBOARD ATTRIBUTE! Guest Name -->
@@ -206,7 +190,7 @@
                 <div class="text-center p-3 p-md-5 bg-white">
                     <div class="mb-4">
                         <!-- DASHBOARD ATTRIBUTE! Guest Image -->
-                        <img src="images/person_3.jpg" alt="Image" class="w-50 mx-auto img-fluid rounded-circle">
+                        <img src="{{asset('assets/frontend/images/person_3.jpg')}}" alt="Image" class="w-50 mx-auto img-fluid rounded-circle">
                     </div>
                     <div class="">
                         <!-- DASHBOARD ATTRIBUTE! Guest Name -->
@@ -228,7 +212,7 @@
                 <div class="text-center p-3 p-md-5 bg-white">
                     <div class="mb-4">
                         <!-- DASHBOARD ATTRIBUTE! Guest Image -->
-                        <img src="images/person_4.jpg" alt="Image" class="w-50 mx-auto img-fluid rounded-circle">
+                        <img src="{{asset('assets/frontend/images/person_4.jpg')}}" alt="Image" class="w-50 mx-auto img-fluid rounded-circle">
                     </div>
                     <div class="">
                         <!-- DASHBOARD ATTRIBUTE! Guest Name -->
@@ -250,7 +234,7 @@
                 <div class="text-center p-3 p-md-5 bg-white">
                     <div class="mb-4">
                         <!-- DASHBOARD ATTRIBUTE! Guest Image -->
-                        <img src="images/person_5.jpg" alt="Image" class="w-50 mx-auto img-fluid rounded-circle">
+                        <img src="{{asset('assets/frontend/images/person_5.jpg')}}" alt="Image" class="w-50 mx-auto img-fluid rounded-circle">
                     </div>
                     <div class="">
                         <!-- DASHBOARD ATTRIBUTE! Guest Name -->
@@ -272,7 +256,7 @@
                 <div class="text-center p-3 p-md-5 bg-white">
                     <div class="mb-4">
                         <!-- DASHBOARD ATTRIBUTE! Guest Image -->
-                        <img src="images/person_6.jpg" alt="Image" class="w-50 mx-auto img-fluid rounded-circle">
+                        <img src="{{asset('assets/frontend/images/person_6.jpg')}}" alt="Image" class="w-50 mx-auto img-fluid rounded-circle">
                     </div>
                     <div class="">
                         <!-- DASHBOARD ATTRIBUTE! Guest Name -->
