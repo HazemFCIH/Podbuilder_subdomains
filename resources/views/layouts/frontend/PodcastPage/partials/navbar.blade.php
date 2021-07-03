@@ -16,7 +16,7 @@
 
             <div class="col-3" data-aos="fade-down">
                 <!-- RSS ATTRIBUTE! Podcast Name -->
-                <h1><a href="index.html" class="text-white h2">{{$podcast->podcast_title}}</a></h1>
+                <h1><a href="{{route('podcasts.show',$podcast->sub_domain)}}" class="text-white h2">{{$podcast->podcast_title}}</a></h1>
             </div>
             <div class="col-9" data-aos="fade-down">
                 <nav class="site-navigation position-relative text-right text-md-right" role="navigation">

@@ -11,7 +11,7 @@
                     </h2>
                     <!-- RSS ATTRIBUTE! Episode meta date [author, date, length] -->
                     <div class="text-white mb-4"><span class="text-white-opacity-05"><small>{{$episodes[0]['episode_auhtor_name']}} |  {{$episodes[0]['episode_date']}}</small></span></div>
-                    <p><a href="episode-page.html" class="btn btn-primary btn-sm py-3 px-4 small">Episode details</a></p>
+                    <p><a href="{{route('podcasts.episode.show',[$podcast->sub_domain,0])}}" class="btn btn-primary btn-sm py-3 px-4 small">Episode details</a></p>
 
                     <div class="player">
                         <audio id="player2" preload="none" controls style="max-width: 100%">
@@ -50,13 +50,13 @@
                     );"></div>
                 <div class="text">
                     <!-- RSS ATTRIBUTE! Episode details [title] -->
-                    <h3 class="font-weight-light"><a href="episode-page.html">{{$episode['episode_title']}}</a></h3>
+                    <h3 class="font-weight-light"><a href="{{route('podcasts.episode.show',[$podcast->sub_domain,($loop->iteration-1)])}}">{{$episode['episode_title']}}</a></h3>
                     <!-- RSS ATTRIBUTE! Episode meta date [author, date, length] -->
                     <div class="text-white mb-3"><span class="text-black-opacity-05"><small>{{$episode['episode_auhtor_name']}} <span
                                     class="sep">/</span> {{$episode['episode_date']}}</small></span></div>
                     <!-- RSS ATTRIBUTE! Episode meta date [description or summary] -->
 {{--                    <p class="mb-4">{!!  $episode['episode_content']!!}</p>--}}
-                  <p class="mb-4">{!!  substr($episode['episode_description'], 0, 100)." "."<a href = '' >see more</a>"!!} </p>
+                  <p class="mb-4">{!!  substr($episode['episode_description'], 0, 100)." "."<a href = '".route('podcasts.episode.show',[$podcast->sub_domain,($loop->iteration-1)])."'>see more</a>"!!} </p>
 
                     <div class="player">
                         <audio id="player2" preload="none" controls style="max-width: 100%">

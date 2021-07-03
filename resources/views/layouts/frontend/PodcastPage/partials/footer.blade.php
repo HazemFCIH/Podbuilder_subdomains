@@ -19,19 +19,15 @@
                     <div class="col-md-6 col-lg-6">
                         <ul class="list-unstyled">
                             <!-- DASHBOARD ATTRIBUTE! Add depending on pages created -->
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Matches</a></li>
-                            <li><a href="#">News</a></li>
-                            <li><a href="#">Team</a></li>
+                            <li><a href="{{route('podcasts.show',$podcast->sub_domain)}}">Home</a></li>
+
                         </ul>
                     </div>
                     <div class="col-md-6 col-lg-6">
                         <ul class="list-unstyled">
                             <!-- DASHBOARD ATTRIBUTE! Add depending on pages created -->
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Membership</a></li>
+                            <li><a href="{{route('podcasts.about.index',$podcast->sub_domain)}}">About Us</a></li>
+
                         </ul>
                     </div>
                 </div>
