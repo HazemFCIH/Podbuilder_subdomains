@@ -31,7 +31,9 @@ Route::resource('episodes',\App\Http\Controllers\EpisodeController::class);
 Route::domain('{subdomain}.'.config('app.short_url'))->group(function () {
     Route::get('/', function (){
         return 'hello';
-    });
+    });    Route::get('/welcome', function (){
+        return 'hello';
+    })->name('welcome');
 
 });
 
