@@ -23,6 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if(config('app.env') === 'production') {
+            \URL::forceScheme('https');
+        }
         $f = \FeedReader::read('https://feeds.redcircle.com/ac0361dd-9d6d-44b5-97a5-11674733c431');
         $f->handle_content_type();
         // feed level
