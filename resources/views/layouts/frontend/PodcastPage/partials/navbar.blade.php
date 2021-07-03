@@ -25,12 +25,10 @@
 
                     <ul class="site-menu js-clone-nav d-none">
                         <li class="active">
-                            <a href="index.html">Home</a>
+                            <a href="{{route('podcasts.show',$podcast->sub_domain)}}">Home</a>
                         </li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="guests-page.html">Guests</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="{{route('podcasts.about.index',$podcast->sub_domain)}}">About</a></li>
+
                     </ul>
                 </nav>
 

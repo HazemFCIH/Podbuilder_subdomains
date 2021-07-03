@@ -55,7 +55,8 @@
                     <div class="text-white mb-3"><span class="text-black-opacity-05"><small>{{$episode['episode_auhtor_name']}} <span
                                     class="sep">/</span> {{$episode['episode_date']}}</small></span></div>
                     <!-- RSS ATTRIBUTE! Episode meta date [description or summary] -->
-                    <p class="mb-4">{!!  $episode['episode_content']!!}</p>
+{{--                    <p class="mb-4">{!!  $episode['episode_content']!!}</p>--}}
+                  <p class="mb-4">{!!  substr($episode['episode_description'], 0, 100)." "."<a href = '' >see more</a>"!!} </p>
 
                     <div class="player">
                         <audio id="player2" preload="none" controls style="max-width: 100%">
