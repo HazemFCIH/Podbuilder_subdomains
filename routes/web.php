@@ -28,12 +28,5 @@ Route::get('/podcast-page', function (){
 });
 Route::resource('podcasts',\App\Http\Controllers\PodcastController::class);
 Route::resource('episodes',\App\Http\Controllers\EpisodeController::class);
-Route::domain('{subdomain}.'.config('app.short_url'))->name('subdomain.')->group(function () {
-    Route::get('/', function (){
-        return 'hello';
-    });    Route::get('/welcome', function (){
-        return 'hello';
-    })->name('welcome');
 
-});
 

@@ -131,7 +131,7 @@ class PodcastController extends Controller
                         'podcast_author' =>$podcast_author,
                         'podcast_premalink' =>$podcast_premalink,
                     ]);
-                    return redirect()->route('subdomain.welcome',$sub_domain);
+                    return redirect()->route('podcasts.show',$sub_domain);
 
                 } else {
                     return redirect()->back();
@@ -163,9 +163,9 @@ class PodcastController extends Controller
      * @param  \App\Models\Podcast  $podcast
      * @return \Illuminate\Http\Response
      */
-    public function edit(Podcast $podcast)
+    public function edit($subdomain)
     {
-        //
+        return $subdomain
     }
 
     /**
