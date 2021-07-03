@@ -5,11 +5,9 @@
             <div class="col-lg-4">
                 <div class="mb-5">
                     <!-- RSS ATTRIBUTE! Podcast Name -->
-                    <h3 class="footer-heading mb-4">About Ask Desiger Podcast</h3>
+                    <h3 class="footer-heading mb-4">About {{$podcast->podcast_title}}</h3>
                     <!-- RSS ATTRIBUTE! Podcast Description -->
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque,
-                        consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima
-                        minus odio!</p>
+                    <p>{!! $podcast->podcast_description !!}</p>
                 </div>
 
             </div>
@@ -94,7 +92,7 @@
                     <script>
                         document.write(new Date().getFullYear());
                         /* RSS ATTRIBUTE! Podcast Name */
-                    </script> All rights reserved | Ask Designer Website is powered
+                    </script> All rights reserved | {{$podcast->podcast_title}} Website is powered
                     by <a href="#" target="_blank">Podbuilder from arcast</a>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </p>
