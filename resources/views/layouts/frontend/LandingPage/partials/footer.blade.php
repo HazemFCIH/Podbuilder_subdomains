@@ -17,10 +17,17 @@
                     <div class="col-md-6 col-lg-6">
                         <ul class="list-unstyled">
                             <!-- DASHBOARD ATTRIBUTE! Add depending on pages created -->
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Signup</a></li>
-                            <li><a href="#">Login</a></li>
-                            <li><a href="#">Contact</a></li>
+                            @auth
+                                <li><a href="{{route('welcome')}}">Home</a></li>
+
+                                <li><a href="#">Contact</a></li>
+                            @elseauth
+                                <li><a href="{{route('welcome')}}">Home</a></li>
+                                <li><a href="{{route('register')}}">Signup</a></li>
+                                <li><a href="#{{route('login')}}">Login</a></li>
+                                <li><a href="#">Contact</a></li>
+                            @endauth
+
                         </ul>
                     </div>
                 </div>
@@ -29,9 +36,9 @@
                         <h3 class="footer-heading mb-4">Follow Us</h3>
                         <div>
                             <!-- DASHBOARD ATTRIBUTE! Social Media -->
-                            <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-                            <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-                            <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+                            <a href="https://www.facebook.com/arcastfm" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                            <a href="https://www.instagram.com/arcastfm/" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                            <a href="https://www.linkedin.com/company/arcast/" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
                         </div>
                     </div>
                 </div>
