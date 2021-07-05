@@ -1,77 +1,58 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+@extends('layouts.frontend.LandingPage.partials.app')
+@section('top-section')
+    <div class="site-blocks-cover overlay inner-page-cover" style="background-image: url({{asset('assets/frontend/images/hero_bg_2.jpg')}});"
+         data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row align-items-center justify-content-center text-center">
+                <div class="col-md-7" data-aos="fade-up" data-aos-delay="400">
+                    <h2 class="text-white font-weight-light mb-2 display-4">SIGNUP</h2>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
+@section('mid-section')
+    <div class="col-lg-5 d-none d-lg-block side_image">
+        <img src="{{asset('assets/frontend/images/person_5.jpg')}}" class="img-thumbnail border-0 rounded-0 p-0" alt="...">
+    </div>
+    <div class="col-lg-7">
+        <div class="p-5">
+            <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+            </div>
+            <form class="user" action="{{route('register')}}" method="post">
+
+                @method('POST')
+                @csrf
+                @include('layouts.general._errors')
+                <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <input type="text" class="form-control form-control-user"
+                               id="exampleFirstName" name="name" placeholder="User Name" value="{{old('name')}}"/>
+
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control form-control-user"
+                           id="exampleInputEmail" name="email" placeholder="Email Address">
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <input type="password" class="form-control form-control-user"
+                               id="exampleInputPassword" placeholder="Password" name="password">
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control form-control-user"
+                               id="exampleRepeatPassword" placeholder="Confirm Password" name="password_confirmation">
+                    </div>
+                </div>
+
+                <input type="submit" class="btn btn-info btn-sm py-3 px-4 small btn-block" value="Signup">
+            </form>
+            <hr>
+
+        </div>
+    </div>
+@endsection
+

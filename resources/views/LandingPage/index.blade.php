@@ -4,7 +4,13 @@
         <h2 class="text-white font-weight-light mb-2 display-4">Podbuilder is your powerful tool to build your
             podcast presence
         </h2>
-        <p><a href="login.html" class="btn btn-info btn-sm py-3 px-4 mt-5 small">Create my Podsite</a></p>
+        @auth
+            <p><a href="#" class="btn btn-info btn-sm py-3 px-4 mt-5 small">Edit my Podsite</a></p>
+
+        @else
+            <p><a href="{{route('login')}}" class="btn btn-info btn-sm py-3 px-4 mt-5 small">Create my Podsite</a></p>
+
+        @endauth
     </div>sdsdsds
 @endsection
 @section('mid-section')
@@ -24,10 +30,16 @@
                     <input type="text" class="form-control form-control-user" id="exampleInputRss"
                            aria-describedby="rss" name="rss_feed" placeholder="ENTER PODCAST RSS FEED...">
                 </div>
-
-                <p><input type="submit" class="btn btn-info btn-sm py-3 px-4 small btn-block" value="Create my
+                @auth
+                    <p><input type="submit" class="btn btn-info btn-sm py-3 px-4 small btn-block" value="Create my
                         Podsite">
-                </p>
+                    </p>
+                @else
+                    <p><a class="btn btn-info btn-sm py-3 px-4 small btn-block" href="{{route('login')}}">Create my
+                            Podsite</a>
+                    </p>
+                @endauth
+
 
             </form>
         </div>

@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('LandingPage.index');
-});
+})->name('welcome');
 
 Auth::routes();
 
@@ -27,6 +27,5 @@ Route::get('/podcast-page', function (){
     return view('PodcastPage.index');
 });
 Route::resource('podcasts',\App\Http\Controllers\PodcastController::class);
-//Route::resource('episodes',\App\Http\Controllers\EpisodeController::class);
 Route::resource('podcasts.about', \App\Http\Controllers\PodcastAboutController::class)->only('index');
 Route::resource('podcasts.episode', \App\Http\Controllers\EpisodeController::class)->only('show');
