@@ -21,7 +21,7 @@
                                 <li><a href="{{route('welcome')}}">Home</a></li>
 
                                 <li><a href="#">Contact</a></li>
-                            @elseauth
+                            @else
                                 <li><a href="{{route('welcome')}}">Home</a></li>
                                 <li><a href="{{route('register')}}">Signup</a></li>
                                 <li><a href="#{{route('login')}}">Login</a></li>
