@@ -29,3 +29,7 @@ Route::get('/podcast-page', function (){
 Route::resource('podcasts',\App\Http\Controllers\PodcastController::class);
 Route::resource('podcasts.about', \App\Http\Controllers\PodcastAboutController::class)->only('index');
 Route::resource('podcasts.episode', \App\Http\Controllers\EpisodeController::class)->only('show');
+Route::prefix('dashboard')->middleware('auth')->name('dashboard.')->group(function () {
+    Route::get('/home',\App\Http\Controllers\PodcastDashboardController::class.'@index')->name('home');
+
+});

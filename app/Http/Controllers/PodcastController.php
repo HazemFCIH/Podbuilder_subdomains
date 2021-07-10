@@ -120,6 +120,7 @@ class PodcastController extends Controller
                     $podcast_premalink = $f->get_permalink();
                     Podcast::create([
                         'sub_domain' =>$sub_domain,
+                        'email' =>auth()->user()->email,
                         'rss_feed' =>$request->rss_feed,
                         'podcast_title' =>$podcast_title,
                         'podcast_description' =>$podcast_description,

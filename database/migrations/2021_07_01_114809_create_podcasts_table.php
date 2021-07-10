@@ -16,6 +16,7 @@ class CreatePodcastsTable extends Migration
         Schema::create('podcasts', function (Blueprint $table) {
             $table->id();
             $table->string('sub_domain');
+            $table->string('email');
             $table->string('rss_feed');
             $table->string('podcast_title');
             $table->text('podcast_description');
