@@ -30,6 +30,9 @@ Route::resource('podcasts',\App\Http\Controllers\PodcastController::class);
 Route::resource('podcasts.about', \App\Http\Controllers\PodcastAboutController::class)->only('index');
 Route::resource('podcasts.episode', \App\Http\Controllers\EpisodeController::class)->only('show');
 Route::prefix('dashboard')->middleware('auth')->name('dashboard.')->group(function () {
+
     Route::get('/home',\App\Http\Controllers\PodcastDashboardController::class.'@index')->name('home');
+    Route::post('social-media',\App\Http\Controllers\SocialMediaController::class.'@index')->name('social-media.index');
+    Route::post('social-media/create',\App\Http\Controllers\SocialMediaController::class.'@create')->name('social-media.create');
 
 });

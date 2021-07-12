@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Podcast;
 use App\Models\SocialMedia;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,17 @@ class SocialMediaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $podcast_data = Podcast::findOrFail($request->podcast_id);
+        if($podcast_data->email != auth()->user()->email){
+            abort(404, 'Page not found');
+
+        }else{
+            return view('front_dashboard.SocialMedia.index',compact('podcast_data'));
+
+        }
+
     }
 
     /**
@@ -22,9 +31,15 @@ class SocialMediaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $podcast_data = Podcast::findOrFail($request->podcast_id);
+        if($podcast_data->email != auth()->user()->email){
+            abort(404, 'Page not found');
+
+        }else{
+        return view('front_dashboard.SocialMedia.create',compact('podcast_data'));
+        }
     }
 
     /**

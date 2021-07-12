@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePodcastGuestsTable extends Migration
+class CreatePodcastFaqsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,12 @@ class CreatePodcastGuestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('podcast_guests', function (Blueprint $table) {
+        Schema::create('podcast_faqs', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->string('title')->nullable();
-            $table->string('description')->nullable();
-            $table->string('linkedIn_link')->nullable();
-            $table->string('facebook_link')->nullable();
-            $table->string('instagram_link')->nullable();
-            $table->string('twitter_link')->nullable();
-            $table->string('episode_number')->nullable();
             $table->string('image_url')->nullable();
+            $table->string('description')->nullable();
+
             $table->bigInteger('podcast_id')->unsigned();
             $table->foreign('podcast_id')->references('id')->on('podcasts')->onDelete('cascade');
             $table->timestamps();
@@ -37,6 +32,6 @@ class CreatePodcastGuestsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('podcast_guests');
+        Schema::dropIfExists('podcast_faqs');
     }
 }

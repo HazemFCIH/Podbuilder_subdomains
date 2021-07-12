@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSocialMediaTable extends Migration
+class CreatePodcastSettingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreateSocialMediaTable extends Migration
      */
     public function up()
     {
-        Schema::create('social_media', function (Blueprint $table) {
+        Schema::create('podcast_settings', function (Blueprint $table) {
             $table->id();
-            $table->string('linkedIn_link')->nullable();
-            $table->string('facebook_link')->nullable();
-            $table->string('instagram_link')->nullable();
-            $table->string('twitter_link')->nullable();
+            $table->string('podcast_image')->nullable();
+            $table->string('new_subdomain')->nullable();
+            $table->string('new_name')->nullable();
+            $table->string('new_description')->nullable();
             $table->bigInteger('podcast_id')->unsigned();
             $table->foreign('podcast_id')->references('id')->on('podcasts')->onDelete('cascade');
-
             $table->timestamps();
         });
     }
@@ -33,6 +32,6 @@ class CreateSocialMediaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('social_media');
+        Schema::dropIfExists('podcast_settings');
     }
 }

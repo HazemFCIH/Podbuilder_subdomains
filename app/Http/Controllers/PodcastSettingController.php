@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\StoreCategory;
+use App\Models\PodcastSetting;
 use Illuminate\Http\Request;
 
-class StoreCategoryController extends Controller
+class PodcastSettingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class StoreCategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\StoreCategory  $storeCategory
+     * @param  \App\Models\PodcastSetting  $podcastSetting
      * @return \Illuminate\Http\Response
      */
-    public function show(StoreCategory $storeCategory)
+    public function show(PodcastSetting $podcastSetting)
     {
         //
     }
@@ -52,10 +52,10 @@ class StoreCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\StoreCategory  $storeCategory
+     * @param  \App\Models\PodcastSetting  $podcastSetting
      * @return \Illuminate\Http\Response
      */
-    public function edit(StoreCategory $storeCategory)
+    public function edit(PodcastSetting $podcastSetting)
     {
         //
     }
@@ -64,10 +64,10 @@ class StoreCategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\StoreCategory  $storeCategory
+     * @param  \App\Models\PodcastSetting  $podcastSetting
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, StoreCategory $storeCategory)
+    public function update(Request $request, PodcastSetting $podcastSetting)
     {
         //
     }
@@ -75,10 +75,10 @@ class StoreCategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\StoreCategory  $storeCategory
+     * @param  \App\Models\PodcastSetting  $podcastSetting
      * @return \Illuminate\Http\Response
      */
-    public function destroy(StoreCategory $storeCategory)
+    public function destroy(PodcastSetting $podcastSetting)
     {
         //
     }

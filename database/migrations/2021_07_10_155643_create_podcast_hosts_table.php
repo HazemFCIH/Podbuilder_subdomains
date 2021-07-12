@@ -15,6 +15,16 @@ class CreatePodcastHostsTable extends Migration
     {
         Schema::create('podcast_hosts', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->nullable();
+            $table->string('title')->nullable();
+            $table->string('description')->nullable();
+            $table->string('linkedIn_link')->nullable();
+            $table->string('facebook_link')->nullable();
+            $table->string('instagram_link')->nullable();
+            $table->string('twitter_link')->nullable();
+            $table->string('image_url')->nullable();
+            $table->bigInteger('podcast_id')->unsigned();
+            $table->foreign('podcast_id')->references('id')->on('podcasts')->onDelete('cascade');
             $table->timestamps();
         });
     }

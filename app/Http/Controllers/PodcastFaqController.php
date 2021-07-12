@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\StoreProduct;
+use App\Models\PodcastFaq;
 use Illuminate\Http\Request;
 
-class StoreProductController extends Controller
+class PodcastFaqController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class StoreProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\StoreProduct  $storeProduct
+     * @param  \App\Models\PodcastFaq  $podcastFaq
      * @return \Illuminate\Http\Response
      */
-    public function show(StoreProduct $storeProduct)
+    public function show(PodcastFaq $podcastFaq)
     {
         //
     }
@@ -52,10 +52,10 @@ class StoreProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\StoreProduct  $storeProduct
+     * @param  \App\Models\PodcastFaq  $podcastFaq
      * @return \Illuminate\Http\Response
      */
-    public function edit(StoreProduct $storeProduct)
+    public function edit(PodcastFaq $podcastFaq)
     {
         //
     }
@@ -64,10 +64,10 @@ class StoreProductController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\StoreProduct  $storeProduct
+     * @param  \App\Models\PodcastFaq  $podcastFaq
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, StoreProduct $storeProduct)
+    public function update(Request $request, PodcastFaq $podcastFaq)
     {
         //
     }
@@ -75,10 +75,10 @@ class StoreProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\StoreProduct  $storeProduct
+     * @param  \App\Models\PodcastFaq  $podcastFaq
      * @return \Illuminate\Http\Response
      */
-    public function destroy(StoreProduct $storeProduct)
+    public function destroy(PodcastFaq $podcastFaq)
     {
         //
     }

@@ -12,7 +12,12 @@
 
 @yield('top-section')
 
-    @yield('site-sections')
+@yield('site-sections')
+
+@include('layouts.frontend.PodcastPage.partials.podcast_hosts')
+
+@include('layouts.frontend.PodcastPage.partials.podcast_guests')
+
 
 
 

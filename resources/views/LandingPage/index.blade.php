@@ -5,7 +5,7 @@
             podcast presence
         </h2>
         @auth
-            <p><a href="#" class="btn btn-info btn-sm py-3 px-4 mt-5 small">Edit my Podsite</a></p>
+            <p><a href="{{route('dashboard.home')}}" class="btn btn-info btn-sm py-3 px-4 mt-5 small">Edit my Podsite</a></p>
 
         @else
             <p><a href="{{route('login')}}" class="btn btn-info btn-sm py-3 px-4 mt-5 small">Create my Podsite</a></p>

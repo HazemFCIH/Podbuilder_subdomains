@@ -13,4 +13,5 @@
         rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="{{asset('assets/pod-dashboard/css/sb-admin-2.min.css')}}" rel="stylesheet">
+    @yield('css-section')
 </head>
