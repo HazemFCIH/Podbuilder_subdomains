@@ -24,17 +24,15 @@
 
     <p class="mb-5">Add your socialMedia Links - <a href="{{URL::to('/')}}/podcasts/{{$podcast_data->sub_domain}}" class="text-info">{{URL::to('/')}}/podcasts/{{$podcast_data->sub_domain}}</a>
     </p>
-    <a href="{{route('dashboard.social-media.create')}}" class="btn btn-primary btn-icon-split mb-4" onclick="event.preventDefault();
-        document.getElementById('socialmedia-create').submit();">
-        <form id="socialmedia-create" action="{{ route('dashboard.social-media.create') }}" method="POST" class="d-none">
-            <input type="hidden" name="podcast_id" value="{{$podcast_data->id}}">
-            @csrf
-        </form>
+    @if(!$podcast_data->socialmedias->first())
+    <a href="{{route('dashboard.social-media.create')}}" class="btn btn-primary btn-icon-split mb-4" >
+
                         <span class="icon text-white-50">
                             <i class="fas fa-plus"></i>
                         </span>
         <span class="text text-capitalize">add new SocialMedia link</span>
     </a>
+    @endif
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
@@ -56,33 +54,40 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td class="text-capitalize">
-                            <a href="#" class="text-primary ">hazem</a>
+                @if($podcast_data->socialmedias->first())
+                 <tr>
+                        <td >
+                            <a href="{{$podcast_data->socialmedias->first()->facebook_link}}" class="text-primary ">facebook</a>
                         </td>
-                        <td class="text-capitalize">
-                            <a href="#" class="text-primary ">hazem</a>
+                        <td >
+                            <a href="{{$podcast_data->socialmedias->first()->twitter_link}}" class="text-primary ">twitter</a>
                         </td>
-                        <td class="text-capitalize">
-                            <a href="#" class="text-primary ">hazem</a>
+                        <td >
+                            <a href="{{$podcast_data->socialmedias->first()->instagram_link}}" class="text-primary ">instagram</a>
                         </td>
-                        <td class="text-capitalize">
-                            <a href="#" class="text-primary ">hazem</a>
+                        <td>
+                            <a href="{{$podcast_data->socialmedias->first()->linkedIn_link}}" class="text-primary ">linkedIn</a>
                         </td>
 
                         <td>
-                            <a href="#" class="text-capitalize text-info">
+                            <a href="{{route('dashboard.social-media.edit',$podcast_data->socialmedias->first()->id)}}" class="text-capitalize text-info">
                                 <i class="fas fa-pencil-alt fa-1x mr-1"></i>
                                 edit
                             </a>
                         </td>
                         <td>
-                            <a href="#" class="text-capitalize text-info">
+                            <a href="{{route('dashboard.social-media.destroy',$podcast_data->socialmedias->first()->id)}}" class="text-capitalize text-info" onclick="event.preventDefault();
+                                document.getElementById('socialmedia-delete').submit();">
                                 <i class="fas fa-trash-alt fa-1x mr-1"></i>
                                 delete
                             </a>
+                            <form id="socialmedia-delete" action="{{ route('dashboard.social-media.destroy',$podcast_data->socialmedias->first()->id) }}" method="POST" class="d-none">
+                                @csrf
+                                @method('DELETE')
+                            </form>
                         </td>
                     </tr>
+                @endif
 
                     </tbody>
                 </table>

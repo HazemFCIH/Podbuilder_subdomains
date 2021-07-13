@@ -9,4 +9,7 @@ class Podcast extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    public function socialmedias(){
+        return $this->hasMany(SocialMedia::class);
+    }
 }

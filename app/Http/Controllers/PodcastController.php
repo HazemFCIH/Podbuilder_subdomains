@@ -148,7 +148,11 @@ class PodcastController extends Controller
     public function show($subdomain)
     {
         $podcast = Podcast::where('sub_domain', $subdomain)->firstOrFail();
-         view()->share('podcast', $podcast);
+        $socielmedia = $podcast->socialmedias->first();
+         view()->share([
+             'podcast'=>$podcast,
+             'socielmedia'=>$socielmedia,
+                            ]);
         $f = \FeedReader::read($podcast->rss_feed);
         $f->handle_content_type();
         $episodes = [];

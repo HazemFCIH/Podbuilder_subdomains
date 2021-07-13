@@ -24,9 +24,9 @@
         </a>
         <div id="collapseSocial" class="collapse" aria-labelledby="headingGuest" data-parent="#accordionSidebar">
             @foreach($podcasts as $podcast)
-                <a class="nav-link" href="{{route('dashboard.social-media.index')}}" onclick="event.preventDefault();
+                <a class="nav-link" href="{{route('dashboard.social-media.set-index')}}" onclick="event.preventDefault();
                                                      document.getElementById('socialmedia-index-{{$podcast['id']}}').submit();">
-                    <form id="socialmedia-index-{{$podcast['id']}}" action="{{ route('dashboard.social-media.index') }}" method="POST" class="d-none">
+                    <form id="socialmedia-index-{{$podcast['id']}}" action="{{ route('dashboard.social-media.set-index') }}" method="POST" class="d-none">
                         <input type="hidden" name="podcast_id" value="{{$podcast['id']}}">
                         @csrf
                     </form>

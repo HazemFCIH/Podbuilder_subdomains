@@ -11,15 +11,11 @@
     <!-- Page Heading -->
     <div class="row mb-4">
         <div class="col-md-6">
-            <a href="{{route('dashboard.social-media.index')}}" class="h3 primary text-capitalize" onclick="event.preventDefault();
-        document.getElementById('socialmedia-index').submit();">
+            <a href="{{route('dashboard.social-media.index')}}" class="h3 primary text-capitalize">
                 <i class="fas fa-chevron-left fa-1x ml-1"></i>
                socialMedia Links
             </a>
-            <form id="socialmedia-index" action="{{ route('dashboard.social-media.index') }}" method="POST" class="d-none">
-                <input type="hidden" name="podcast_id" value="{{$podcast_data->id}}">
-                @csrf
-            </form>
+
         </div>
         <div class="col-md-6">
             <h6 class="text-right text-sm-start">
@@ -35,12 +31,13 @@
             <h6 class="m-0 font-weight-bold text-primary text-capitalize">add SocialMedia link</h6>
         </div>
         <div class="card-body">
-            <form class="user" method="POST" action="{{route('dashboard.social-media.store')}}">
+            <form class="user" method="post" action="{{route('dashboard.social-media.store')}}">
 @csrf
-                @method('POST')
+                @include('layouts.general._errors')
+
                 <div class="form-group">
                     <label for="examplePostName" class="form-label text text-capitalize">Facebook link</label>
-                    <input type="text" class="form-control form-control-user rounded-0 text-capitalize"
+                    <input type="text" class="form-control form-control-user rounded-0 "
                            id="examplePostName" placeholder="facebook.com/podcast" name="facebook_link">
                     <div id="examplePostName" class="form-text text text-xs">
                         Facebook link
@@ -49,7 +46,7 @@
 
                 <div class="form-group">
                     <label for="examplePostName" class="form-label text text-capitalize">Instagram link</label>
-                    <input type="text" class="form-control form-control-user rounded-0 text-capitalize"
+                    <input type="text" class="form-control form-control-user rounded-0 "
                            id="examplePostName" placeholder="instagram.com/podcast" name="instagram_link">
                     <div id="examplePostName" class="form-text text text-xs">
                         Instagram link
@@ -57,7 +54,7 @@
                 </div>
                 <div class="form-group">
                     <label for="examplePostName" class="form-label text text-capitalize">Twitter link</label>
-                    <input type="text" class="form-control form-control-user rounded-0 text-capitalize"
+                    <input type="text" class="form-control form-control-user rounded-0 "
                            id="examplePostName" placeholder="twitter.com/podcast" name="twitter_link">
                     <div id="examplePostName" class="form-text text text-xs">
                         Twitter link
@@ -65,7 +62,7 @@
                 </div>
                 <div class="form-group">
                     <label for="examplePostName" class="form-label text text-capitalize">LinkedIn link</label>
-                    <input type="text" class="form-control form-control-user rounded-0 text-capitalize"
+                    <input type="text" class="form-control form-control-user rounded-0 "
                            id="examplePostName" placeholder="linkedin.com/podcast" name="linkedIn_link">
                     <div id="examplePostName" class="form-text text text-xs">
                         LinkedIn link
@@ -75,13 +72,14 @@
                 <div class="form-group row">
                     <div class="col-sm-9 mb-3 mb-sm-0">
                     </div>
-                    <div class="col-sm-3 mt-3 mb-sm-0">
-                       <input type="submit" value="Add" class="btn btn-primary btn-user btn-block text-capitalize"/>
 
-
-                    </div>
                 </div>
                 <input type="hidden" name="podcast_id" value="{{$podcast_data->id}}">
+                <div class="col-sm-3 mt-3 mb-sm-0">
+                    <input type="submit" value="Add" class="btn btn-primary btn-user btn-block text-capitalize"/>
+
+
+                </div>
             </form>
         </div>
     </div>

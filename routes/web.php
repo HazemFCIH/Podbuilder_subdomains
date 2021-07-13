@@ -32,8 +32,12 @@ Route::resource('podcasts.episode', \App\Http\Controllers\EpisodeController::cla
 Route::prefix('dashboard')->middleware('auth')->name('dashboard.')->group(function () {
 
     Route::get('/home',\App\Http\Controllers\PodcastDashboardController::class.'@index')->name('home');
-    Route::post('social-media',\App\Http\Controllers\SocialMediaController::class.'@index')->name('social-media.index');
-    Route::post('social-media/create',\App\Http\Controllers\SocialMediaController::class.'@create')->name('social-media.create');
-    Route::post('social-media/store',\App\Http\Controllers\SocialMediaController::class.'@store')->name('social-media.store');
+    Route::post('social-media-set',\App\Http\Controllers\SocialMediaController::class.'@to_index')->name('social-media.set-index');
+//    Route::get('social-media',\App\Http\Controllers\SocialMediaController::class.'@index')->name('social-media.index');
+//    Route::get('social-media/create',\App\Http\Controllers\SocialMediaController::class.'@create')->name('social-media.create');
+//    Route::post('social-media',\App\Http\Controllers\SocialMediaController::class.'@store')->name('social-media.store');
+//    Route::put('social-media',\App\Http\Controllers\SocialMediaController::class.'@update')->name('social-media.update');
+//    Route::get('social-media/{social-media}/edit}',\App\Http\Controllers\SocialMediaController::class.'@edit')->name('social-media.edit');
+    Route::resource('social-media',\App\Http\Controllers\SocialMediaController::class);
 
 });

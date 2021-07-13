@@ -9,5 +9,7 @@ class SocialMedia extends Model
 {
     use HasFactory;
     protected $guarded = [];
-
+    public function podcast(){
+        return $this->belongsTo(Podcast::class);
+    }
 }
