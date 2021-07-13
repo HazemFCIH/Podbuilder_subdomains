@@ -34,5 +34,6 @@ Route::prefix('dashboard')->middleware('auth')->name('dashboard.')->group(functi
     Route::get('/home',\App\Http\Controllers\PodcastDashboardController::class.'@index')->name('home');
     Route::post('social-media',\App\Http\Controllers\SocialMediaController::class.'@index')->name('social-media.index');
     Route::post('social-media/create',\App\Http\Controllers\SocialMediaController::class.'@create')->name('social-media.create');
+    Route::post('social-media/store',\App\Http\Controllers\SocialMediaController::class.'@store')->name('social-media.store');
 
 });
