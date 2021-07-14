@@ -11,25 +11,21 @@
     <!-- Page Heading -->
     <div class="row">
         <div class="col-md-6">
-            <h3 class="text-gray-800">Guest</h3>
+            <h3 class="text-gray-800">guests</h3>
         </div>
         <div class="col-md-6">
             <h6 class="text-right text-sm-start">
-                <a href="#" class="text-capitalize">view site
+                <a href="{{URL::to('/')}}/podcasts/{{$podcast_data->sub_domain}}" class="text-capitalize">view site
                     <i class="fas fa-external-link-alt fa-1x ml-1"></i>
                 </a>
             </h6>
         </div>
     </div>
 
-    <p class="mb-5">Add your socialMedia Links - <a href="{{URL::to('/')}}/podcasts/{{$podcast_data->sub_domain}}" class="text-info">{{URL::to('/')}}/podcasts/{{$podcast_data->sub_domain}}</a>
+    <p class="mb-5">Add your Podcast guests - <a href="{{URL::to('/')}}/podcasts/{{$podcast_data->sub_domain}}" class="text-info">{{URL::to('/')}}/podcasts/{{$podcast_data->sub_domain}}</a>
     </p>
-    <a href="{{route('dashboard.social-media.create')}}" class="btn btn-primary btn-icon-split mb-4" onclick="event.preventDefault();
-        document.getElementById('socialmedia-create').submit();">
-        <form id="socialmedia-create" action="{{ route('dashboard.social-media.create') }}" method="POST" class="d-none">
-            <input type="hidden" name="podcast_id" value="{{$podcast_data->id}}">
-            @csrf
-        </form>
+    <a href="{{route('dashboard.podcast-guests.create')}}" class="btn btn-primary btn-icon-split mb-4" >
+
         <span class="icon text-white-50">
                             <i class="fas fa-plus"></i>
                         </span>
@@ -46,86 +42,72 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
-                        <th>Guest Name</th>
-                        <th>Published Date</th>
-                        <th>View</th>
+                        <th>guest Name</th>
+                        <th>guest title</th>
+                        <th>guest Bio</th>
+                        <th>guest Episode</th>
+                        <th>Image</th>
+                        <th>Facebook</th>
+                        <th>Instagram</th>
+                        <th>Twitter</th>
+                        <th>LinkedIn</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td class="text-capitalize">
-                            <a href="#" class="text-primary ">hazem</a>
-                        </td>
-                        <td>2008/11/13</td>
-                        <td>
-                            <a href="#" class="text-capitalize text-info">
-                                <i class="fas fa-eye fa-1x mr-1"></i>
-                                view
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#" class="text-capitalize text-info">
-                                <i class="fas fa-pencil-alt fa-1x mr-1"></i>
-                                edit
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#" class="text-capitalize text-info">
-                                <i class="fas fa-trash-alt fa-1x mr-1"></i>
-                                delete
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-capitalize">
-                            <a href="#" class="text-primary ">ghanem</a>
-                        </td>
-                        <td>2011/06/27</td>
-                        <td>
-                            <a href="#" class="text-capitalize text-info">
-                                <i class="fas fa-eye fa-1x mr-1"></i>
-                                view
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#" class="text-capitalize text-info">
-                                <i class="fas fa-pencil-alt fa-1x mr-1"></i>
-                                edit
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#" class="text-capitalize text-info">
-                                <i class="fas fa-trash-alt fa-1x mr-1"></i>
-                                delete
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-capitalize">
-                            <a href="#" class="text-primary ">saady</a>
-                        </td>
-                        <td>2011/01/25</td>
-                        <td>
-                            <a href="#" class="text-capitalize text-info">
-                                <i class="fas fa-eye fa-1x mr-1"></i>
-                                view
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#" class="text-capitalize text-info">
-                                <i class="fas fa-pencil-alt fa-1x mr-1"></i>
-                                edit
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#" class="text-capitalize text-info">
-                                <i class="fas fa-trash-alt fa-1x mr-1"></i>
-                                delete
-                            </a>
-                        </td>
-                    </tr>
+                    @foreach($podcast_data->podcastGuests as $guest)
+                        <tr>
+                            <td class="text-capitalize">
+                                <p class="text-primary ">{{$guest->name}}</p>
+                            </td>
+                            <td class="text-capitalize">
+                                <p class="text-primary ">{{$guest->title}}</p>
+                            </td>
+                            <td class="text-capitalize">
+                                <p class="text-primary ">{!! $guest->description !!}</p>
+                            </td>
+                            <td >
+                                <a href="{{$guest->episode_link}}" class="text-primary ">Episode</a>
+                            </td>
+                            <td class="text-capitalize">
+                                <img src="{{$guest->image_path}}" width="100px" alt="">
+                            </td>
+
+                            <td >
+                                <a href="{{$guest->facebook_link}}" class="text-primary ">facebook</a>
+                            </td>
+                            <td >
+                                <a href="{{$guest->twitter_link}}" class="text-primary ">twitter</a>
+                            </td>
+                            <td >
+                                <a href="{{$guest->instagram_link}}" class="text-primary ">instagram</a>
+                            </td>
+                            <td>
+                                <a href="{{$guest->linkedIn_link}}" class="text-primary ">linkedIn</a>
+                            </td>
+
+                            <td>
+                                <a href="{{route('dashboard.podcast-guests.edit',$guest->id)}}" class="text-capitalize text-info">
+                                    <i class="fas fa-pencil-alt fa-1x mr-1"></i>
+                                    edit
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{route('dashboard.podcast-guests.destroy',$guest->id)}}" class="text-capitalize text-info" onclick="event.preventDefault();
+                                document.getElementById('guests-delete').submit();">
+                                    <i class="fas fa-trash-alt fa-1x mr-1"></i>
+                                    delete
+                                </a>
+                                <form id="guests-delete" action="{{ route('dashboard.podcast-guests.destroy',$guest->id) }}" method="POST" class="d-none">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
+                            </td>
+                        </tr>
+
+                    @endforeach
+
                     </tbody>
                 </table>
             </div>

@@ -11,7 +11,10 @@ class PodcastAboutController extends Controller
     public function index($subdomain)
     {
         $podcast = Podcast::where('sub_domain', $subdomain)->firstOrFail();
-        view()->share('podcast', $podcast);
+        $socielmedia = $podcast->socialmedias->first();
+
+        view()->share(['podcast'=> $podcast,
+                        'socielmedia'=>$socielmedia,]);
         return view('PodcastPage.about');
     }
 

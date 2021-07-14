@@ -11,3 +11,18 @@
 <script src="{{asset('assets/pod-dashboard/js/demo/chart-area-demo.js')}}"></script>
 <script src="{{asset('assets/pod-dashboard/js/demo/chart-pie-demo.js')}}"></script>
 @yield('js-section')
+<script>
+    $(".image-preview").change(function () {
+
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('.show-image').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(this.files[0]); // convert to base64 string
+        }
+
+    });
+</script>

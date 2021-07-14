@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Podcast;
 use Illuminate\Http\Request;
-
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
 class PodcastController extends Controller
 {
 
@@ -149,9 +151,13 @@ class PodcastController extends Controller
     {
         $podcast = Podcast::where('sub_domain', $subdomain)->firstOrFail();
         $socielmedia = $podcast->socialmedias->first();
+        $hosts = $podcast->podcastHosts->toArray();
+        $guests = $podcast->podcastGuests;
          view()->share([
              'podcast'=>$podcast,
              'socielmedia'=>$socielmedia,
+             'hosts'=>$hosts,
+             'guests'=>$guests,
                             ]);
         $f = \FeedReader::read($podcast->rss_feed);
         $f->handle_content_type();

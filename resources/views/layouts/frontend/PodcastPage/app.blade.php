@@ -13,10 +13,15 @@
 @yield('top-section')
 
 @yield('site-sections')
+@if(isset($hosts))
+        @include('layouts.frontend.PodcastPage.partials.podcast_hosts')
 
-@include('layouts.frontend.PodcastPage.partials.podcast_hosts')
+    @endif
 
-@include('layouts.frontend.PodcastPage.partials.podcast_guests')
+    @if(isset($guests))
+        @include('layouts.frontend.PodcastPage.partials.podcast_guests')
+
+    @endif
 
 
 

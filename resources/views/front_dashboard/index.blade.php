@@ -25,12 +25,15 @@
                                        href="{{route('podcasts.show',$podcast['sub_domain'])}}">podbuilder.com/podcasts/{{$podcast['sub_domain']}}</a> </h6>
                             </div>
                             <div class="text-center mb-3">
-                                <a class="mr-5" href="#">
+                                <a  href="{{route('dashboard.podcast-settings.set-index')}}" onclick="event.preventDefault();
+                                    document.getElementById('settings-index-{{$podcast['id']}}').submit();">
                                     <i class="fas fa-cog fa-1x"></i>
                                 </a>
-                                <a href="#">
-                                    <i class="fas fa-edit fa-1x"></i>
-                                </a>
+                                <form id="settings-index-{{$podcast['id']}}" action="{{ route('dashboard.podcast-settings.set-index') }}" method="POST" class="d-none">
+                                    <input type="hidden" name="podcast_id" value="{{$podcast['id']}}">
+                                    @csrf
+                                </form>
+
                             </div>
                         </div>
                     </div>

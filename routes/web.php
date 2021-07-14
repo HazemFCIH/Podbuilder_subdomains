@@ -33,11 +33,15 @@ Route::prefix('dashboard')->middleware('auth')->name('dashboard.')->group(functi
 
     Route::get('/home',\App\Http\Controllers\PodcastDashboardController::class.'@index')->name('home');
     Route::post('social-media-set',\App\Http\Controllers\SocialMediaController::class.'@to_index')->name('social-media.set-index');
-//    Route::get('social-media',\App\Http\Controllers\SocialMediaController::class.'@index')->name('social-media.index');
-//    Route::get('social-media/create',\App\Http\Controllers\SocialMediaController::class.'@create')->name('social-media.create');
-//    Route::post('social-media',\App\Http\Controllers\SocialMediaController::class.'@store')->name('social-media.store');
-//    Route::put('social-media',\App\Http\Controllers\SocialMediaController::class.'@update')->name('social-media.update');
-//    Route::get('social-media/{social-media}/edit}',\App\Http\Controllers\SocialMediaController::class.'@edit')->name('social-media.edit');
     Route::resource('social-media',\App\Http\Controllers\SocialMediaController::class);
+    Route::post('podcast-hosts-set',\App\Http\Controllers\PodcastHostController::class.'@to_index')->name('podcast-hosts.set-index');
+    Route::resource('podcast-hosts',\App\Http\Controllers\PodcastHostController::class);
+    Route::post('podcast-guests-set',\App\Http\Controllers\PodcastGuestController::class.'@to_index')->name('podcast-guests.set-index');
+    Route::resource('podcast-guests',\App\Http\Controllers\PodcastGuestController::class);
+    Route::post('podcast-faqs-set',\App\Http\Controllers\PodcastFaqController::class.'@to_index')->name('podcast-faqs.set-index');
+    Route::resource('podcast-faqs',\App\Http\Controllers\PodcastFaqController::class);
+    Route::post('podcast-settings-set',\App\Http\Controllers\PodcastSettingController::class.'@to_index')->name('podcast-settings.set-index');
+
+    Route::resource('podcast-settings',\App\Http\Controllers\PodcastSettingController::class);
 
 });

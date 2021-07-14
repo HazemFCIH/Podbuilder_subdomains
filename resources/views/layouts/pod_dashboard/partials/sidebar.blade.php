@@ -40,29 +40,66 @@
 
     <!-- Nav Item - Customize -->
     <li class="nav-item">
-        <a class="nav-link" href="customize.html">
-            <i class="fas fa-fw fa-address-book"></i>
-            <span>Podcasts Creators</span></a>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseHost" aria-expanded="true" aria-controls="collapseGuest">
+            <i class="fas fa-fw fa-grin-alt"></i>
+            <span class="text-capitalize">Podcast Creators</span>
+        </a>
+        <div id="collapseHost" class="collapse" aria-labelledby="headingGuest" data-parent="#accordionSidebar">
+            @foreach($podcasts as $podcast)
+                <a class="nav-link" href="{{route('dashboard.podcast-hosts.set-index')}}" onclick="event.preventDefault();
+                    document.getElementById('hosts-index-{{$podcast['id']}}').submit();">
+                    <form id="hosts-index-{{$podcast['id']}}" action="{{ route('dashboard.podcast-hosts.set-index') }}" method="POST" class="d-none">
+                        <input type="hidden" name="podcast_id" value="{{$podcast['id']}}">
+                        @csrf
+                    </form>
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>{{$podcast['podcast_title']}}</span></a>
+            @endforeach
+
+        </div>
     </li>
 
     <!-- Nav Item - Guest -->
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGuest" aria-expanded="true" aria-controls="collapseGuest">
             <i class="fas fa-fw fa-grin-alt"></i>
-            <span>Guests</span></a>
+            <span class="text-capitalize">Podcast Guests</span>
+        </a>
+        <div id="collapseGuest" class="collapse" aria-labelledby="headingGuest" data-parent="#accordionSidebar">
+            @foreach($podcasts as $podcast)
+                <a class="nav-link" href="{{route('dashboard.podcast-guests.set-index')}}" onclick="event.preventDefault();
+                    document.getElementById('guests-index-{{$podcast['id']}}').submit();">
+                    <form id="guests-index-{{$podcast['id']}}" action="{{ route('dashboard.podcast-guests.set-index') }}" method="POST" class="d-none">
+                        <input type="hidden" name="podcast_id" value="{{$podcast['id']}}">
+                        @csrf
+                    </form>
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>{{$podcast['podcast_title']}}</span></a>
+            @endforeach
+
+        </div>
     </li>
     <!-- Nav Item - FAQ -->
     <li class="nav-item">
-        <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-question"></i>
-            <span>FAQ</span></a>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFaqs" aria-expanded="true" aria-controls="collapseGuest">
+            <i class="fas fa-fw fa-grin-alt"></i>
+            <span class="text-capitalize">Podcast FAQ</span>
+        </a>
+        <div id="collapseFaqs" class="collapse" aria-labelledby="headingGuest" data-parent="#accordionSidebar">
+            @foreach($podcasts as $podcast)
+                <a class="nav-link" href="{{route('dashboard.podcast-faqs.set-index')}}" onclick="event.preventDefault();
+                    document.getElementById('faqs-index-{{$podcast['id']}}').submit();">
+                    <form id="faqs-index-{{$podcast['id']}}" action="{{ route('dashboard.podcast-faqs.set-index') }}" method="POST" class="d-none">
+                        <input type="hidden" name="podcast_id" value="{{$podcast['id']}}">
+                        @csrf
+                    </form>
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>{{$podcast['podcast_title']}}</span></a>
+            @endforeach
+
+        </div>
     </li>
-    <!-- Nav Item - FAQ -->
-    <li class="nav-item">
-        <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Settings</span></a>
-    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
     <!-- Sidebar Toggler (Sidebar) -->

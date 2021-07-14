@@ -12,7 +12,11 @@ class EpisodeController extends Controller
     public function show($sub_domain,$episode_number)
     {
         $podcast = Podcast::where('sub_domain', $sub_domain)->firstOrFail();
-        view()->share('podcast', $podcast);;
+        $socielmedia = $podcast->socialmedias->first();
+        view()->share([
+            'podcast'=> $podcast,
+            'socielmedia'=> $socielmedia,
+            ]);
 
         $f = \FeedReader::read($podcast->rss_feed);
         $f->handle_content_type();

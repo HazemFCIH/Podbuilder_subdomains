@@ -12,4 +12,11 @@ class Podcast extends Model
     public function socialmedias(){
         return $this->hasMany(SocialMedia::class);
     }
+    public function podcastHosts(){
+        return $this->hasMany(PodcastHost::class);
+    }
+    public function podcastGuests(){
+        return $this->hasMany(PodcastGuest::class);
+    }
 }
+
