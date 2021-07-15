@@ -48,6 +48,10 @@
                         <th>Instagram</th>
                         <th>Twitter</th>
                         <th>LinkedIn</th>
+                        <th>Google</th>
+                        <th>Apple</th>
+                        <th>Deezer</th>
+                        <th>Anghami</th>
 
                         <th>Edit</th>
                         <th>Delete</th>
@@ -68,6 +72,19 @@
                         <td>
                             <a href="{{$podcast_data->socialmedias->first()->linkedIn_link}}" class="text-primary ">linkedIn</a>
                         </td>
+                     <td>
+                         <a href="{{$podcast_data->socialmedias->first()->google_link}}" class="text-primary ">Google Podcast</a>
+                     </td>
+                     <td>
+                         <a href="{{$podcast_data->socialmedias->first()->apple_link}}" class="text-primary ">Apple Podcast</a>
+                     </td>
+                     <td>
+                         <a href="{{$podcast_data->socialmedias->first()->deezer_link}}" class="text-primary ">Deezer Podcast</a>
+                     </td>
+                     <td>
+                         <a href="{{$podcast_data->socialmedias->first()->anghami_link}}" class="text-primary ">Anghami Podcast</a>
+                     </td>
+
 
                         <td>
                             <a href="{{route('dashboard.social-media.edit',$podcast_data->socialmedias->first()->id)}}" class="text-capitalize text-info">

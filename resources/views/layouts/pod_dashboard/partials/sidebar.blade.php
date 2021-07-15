@@ -80,25 +80,25 @@
         </div>
     </li>
     <!-- Nav Item - FAQ -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFaqs" aria-expanded="true" aria-controls="collapseGuest">
-            <i class="fas fa-fw fa-grin-alt"></i>
-            <span class="text-capitalize">Podcast FAQ</span>
-        </a>
-        <div id="collapseFaqs" class="collapse" aria-labelledby="headingGuest" data-parent="#accordionSidebar">
-            @foreach($podcasts as $podcast)
-                <a class="nav-link" href="{{route('dashboard.podcast-faqs.set-index')}}" onclick="event.preventDefault();
-                    document.getElementById('faqs-index-{{$podcast['id']}}').submit();">
-                    <form id="faqs-index-{{$podcast['id']}}" action="{{ route('dashboard.podcast-faqs.set-index') }}" method="POST" class="d-none">
-                        <input type="hidden" name="podcast_id" value="{{$podcast['id']}}">
-                        @csrf
-                    </form>
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>{{$podcast['podcast_title']}}</span></a>
-            @endforeach
+{{--    <li class="nav-item">--}}
+{{--        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFaqs" aria-expanded="true" aria-controls="collapseGuest">--}}
+{{--            <i class="fas fa-fw fa-grin-alt"></i>--}}
+{{--            <span class="text-capitalize">Podcast FAQ</span>--}}
+{{--        </a>--}}
+{{--        <div id="collapseFaqs" class="collapse" aria-labelledby="headingGuest" data-parent="#accordionSidebar">--}}
+{{--            @foreach($podcasts as $podcast)--}}
+{{--                <a class="nav-link" href="{{route('dashboard.podcast-faqs.set-index')}}" onclick="event.preventDefault();--}}
+{{--                    document.getElementById('faqs-index-{{$podcast['id']}}').submit();">--}}
+{{--                    <form id="faqs-index-{{$podcast['id']}}" action="{{ route('dashboard.podcast-faqs.set-index') }}" method="POST" class="d-none">--}}
+{{--                        <input type="hidden" name="podcast_id" value="{{$podcast['id']}}">--}}
+{{--                        @csrf--}}
+{{--                    </form>--}}
+{{--                    <i class="fas fa-fw fa-tachometer-alt"></i>--}}
+{{--                    <span>{{$podcast['podcast_title']}}</span></a>--}}
+{{--            @endforeach--}}
 
-        </div>
-    </li>
+{{--        </div>--}}
+{{--    </li>--}}
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

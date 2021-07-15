@@ -1,4 +1,6 @@
-<div class="site-section">
+@if($hosts)
+
+    <div class="site-section">
     <div class="container" data-aos="fade-up">
         <div class="row mb-5">
             <div class="col-md-12 text-center">
@@ -42,3 +44,4 @@
     </div>
 
 </div>
+@endif

@@ -68,6 +68,38 @@
                         LinkedIn link
                     </div>
                 </div>
+                <div class="form-group">
+                    <label for="examplePostName" class="form-label text text-capitalize">Apple Podcast link</label>
+                    <input type="text" class="form-control form-control-user rounded-0 "
+                           id="examplePostName" placeholder="itunes.com/podcast" name="apple_link">
+                    <div id="examplePostName" class="form-text text text-xs">
+                        Apple Podcast link
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="examplePostName" class="form-label text text-capitalize">Google Podcast link</label>
+                    <input type="text" class="form-control form-control-user rounded-0 "
+                           id="examplePostName" placeholder="google.com/podcast" name="google_link">
+                    <div id="examplePostName" class="form-text text text-xs">
+                        Google Podcast link
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="examplePostName" class="form-label text text-capitalize">Deezer link</label>
+                    <input type="text" class="form-control form-control-user rounded-0 "
+                           id="examplePostName" placeholder="deezer.com/podcast" name="deezer_link">
+                    <div id="examplePostName" class="form-text text text-xs">
+                        Deezer link
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="examplePostName" class="form-label text text-capitalize">Anghami link</label>
+                    <input type="text" class="form-control form-control-user rounded-0 "
+                           id="examplePostName" placeholder="anghami.com/podcast" name="anghami_link">
+                    <div id="examplePostName" class="form-text text text-xs">
+                        Anghami link
+                    </div>
+                </div>
 
                 <div class="form-group row">
                     <div class="col-sm-9 mb-3 mb-sm-0">

@@ -39,10 +39,10 @@
 
                         <div>
                             <!-- DASHBOARD ATTRIBUTE! Social Media -->
-                            <a href="{{$socielmedia->facebook_link}}" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-                            <a href="{{$socielmedia->twitter_link}}" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-                            <a href="{{$socielmedia->instagram_link}}" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-                            <a href="{{$socielmedia->linkedIn_link}}#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+                            <a href="{{$socielmedia->facebook_link}}" target="_blank" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                            <a href="{{$socielmedia->twitter_link}}" target="_blank" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                            <a href="{{$socielmedia->instagram_link}}" target="_blank" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                            <a href="{{$socielmedia->linkedIn_link}}#" target="_blank"  class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
                         </div>
 
                     </div>
@@ -59,21 +59,21 @@
                     <div class="col-md-6 col-lg-6">
                         <ul class="list-unstyled">
                             <!-- RSS ATTRIBUTE! Apple Podcast Link -->
-                            <li><a href="#"><img src="{{asset('assets/frontend/images/platform-logos_0003_applepodcastslogo.webp')}}" alt="Image"
+                            <li><a href="{{$socielmedia->apple_link}}" target="_blank"><img src="{{asset('assets/frontend/images/platform-logos_0003_applepodcastslogo.webp')}}" alt="Image"
                                                  class="img-fluid"></a></li>
                             <!-- RSS ATTRIBUTE! Google Podcast Link -->
-                            <li><a href="#"><img src="{{asset('assets/frontend/images/platform-logos_0002_google-podcasts-logo.webp')}}" alt="Image"
+                            <li><a href="{{$socielmedia->google_link}}" target="_blank"><img src="{{asset('assets/frontend/images/platform-logos_0002_google-podcasts-logo.webp')}}" alt="Image"
                                                  class="img-fluid"></a></li>
                         </ul>
                     </div>
                     <div class="col-md-6 col-lg-6">
                         <ul class="list-unstyled">
                             <!-- RSS ATTRIBUTE! Anghami Podcast Link -->
-                            <li><a href="#"><img src="{{asset('assets/frontend/images/platform-logos_0004_anghami-logo-colored.webp')}}" alt="Image"
+                            <li><a href="{{$socielmedia->anghami_link}}" target="_blank"><img src="{{asset('assets/frontend/images/platform-logos_0004_anghami-logo-colored.webp')}}" alt="Image"
                                                  class="img-fluid"></a></li>
                             <!-- RSS ATTRIBUTE! Deezer Podcast Link -->
-                            <li><a href="#"><img src="{{asset('assets/frontend/images/platform-logos_0005_1280px-Deezer_logo.webp')}}" alt="Image"
-                                                 class="img-fluid"></li>
+                            <li><a href="{{$socielmedia->deezer_link}}" target="_blank"><img src="{{asset('assets/frontend/images/platform-logos_0005_1280px-Deezer_logo.webp')}}" alt="Image"
+                                                                                             class="img-fluid"></a></li>
                         </ul>
                     </div>
                 </div>

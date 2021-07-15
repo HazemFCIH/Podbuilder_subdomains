@@ -1,3 +1,4 @@
+@if(!$guests->isEmpty())
 <div class="site-section bg-light block-13">
     <div class="container">
         <div class="row mb-5">
@@ -6,7 +7,7 @@
             </div>
         </div>
         <div class="nonloop-block-13 owl-carousel">
-            @if(isset($guests))
+
 @foreach($guests as $guest)
                     <div class="text-center p-3 p-md-5 bg-white">
                         <div class="mb-4">
@@ -32,9 +33,10 @@
                     </div>
 
                 @endforeach
-            @endif
+
 
 
         </div>
     </div>
 </div>
+@endif

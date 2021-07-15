@@ -4,9 +4,11 @@
             <div class="col-lg-4">
                 <div class="mb-5">
                     <h3 class="footer-heading mb-4 text-uppercase">podbuilder</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque,
-                        consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima
-                        minus odio!</p>
+                    <p>it's a podcast centric website builder. You add your RSS feed and it creates a website that has all of your podcast episodes.
+                        The sweet spot is the following:
+                        1. You can create pages like podcast creators, podcast guests, buy me coffee, store fronts, ...
+                        2. The tool work in the background with the best SEO practises to index your website using the episodes and pages you create.
+                        3. We build it to help you scale and control your brand around your podcast.</p>
                 </div>
             </div>
             <div class="col-lg-4 mb-5 mb-lg-0">
@@ -31,27 +33,24 @@
                         </ul>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <h3 class="footer-heading mb-4">Follow Us</h3>
-                        <div>
-                            <!-- DASHBOARD ATTRIBUTE! Social Media -->
-                            <a href="https://www.facebook.com/arcastfm" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-                            <a href="https://www.instagram.com/arcastfm/" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-                            <a href="https://www.linkedin.com/company/arcast/" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
-                        </div>
-                    </div>
-                </div>
+
             </div>
             <div class="col-lg-4 mb-5 mb-lg-0">
                 <div class="mb-5">
-                    <h3 class="footer-heading mb-4">Watch Tutorial</h3>
-                    <div class="block-16">
-                        <figure>
-                            <img src="{{asset('assets/frontend/images/img_1.jpg')}}" alt="Image placeholder" class="img-fluid rounded">
-                            <a href="https://vimeo.com/channels/staffpicks/93951774" class="play-button popup-vimeo"><span
-                                    class="icon-play"></span></a>
-                        </figure>
+{{--                    <h3 class="footer-heading mb-4">Watch Tutorial</h3>--}}
+{{--                    <div class="block-16">--}}
+{{--                        <figure>--}}
+{{--                            <img src="{{asset('assets/frontend/images/img_1.jpg')}}" alt="Image placeholder" class="img-fluid rounded">--}}
+{{--                            <a href="https://vimeo.com/channels/staffpicks/93951774" class="play-button popup-vimeo"><span--}}
+{{--                                    class="icon-play"></span></a>--}}
+{{--                        </figure>--}}
+                    <h3 class="footer-heading mb-4">Follow Us</h3>
+                    <div>
+                        <!-- DASHBOARD ATTRIBUTE! Social Media -->
+                        <a href="https://www.facebook.com/arcastfm" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                        <a href="https://www.instagram.com/arcastfm/" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                        <a href="https://www.linkedin.com/company/arcast/" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+                    </div>
                     </div>
                 </div>
             </div>
