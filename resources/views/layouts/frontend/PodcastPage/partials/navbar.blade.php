@@ -28,6 +28,8 @@
                             <a href="{{route('podcasts.show',$podcast->sub_domain)}}">Home</a>
                         </li>
                         <li><a href="{{route('podcasts.about.index',$podcast->sub_domain)}}">About</a></li>
+                        <li><a href="{{route('podcasts.faqs.index',$podcast->sub_domain)}}">FAQs</a></li>
+
 
                     </ul>
                 </nav>

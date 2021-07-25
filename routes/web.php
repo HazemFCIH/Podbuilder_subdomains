@@ -29,9 +29,12 @@ Route::get('/podcast-page', function (){
 Route::resource('podcasts',\App\Http\Controllers\PodcastController::class);
 Route::resource('podcasts.about', \App\Http\Controllers\PodcastAboutController::class)->only('index');
 Route::resource('podcasts.episode', \App\Http\Controllers\EpisodeController::class)->only('show');
+Route::resource('podcasts.faqs', \App\Http\Controllers\PodcastFaqsController::class)->only('index');
 Route::prefix('dashboard')->middleware('auth')->name('dashboard.')->group(function () {
 
     Route::get('/home',\App\Http\Controllers\PodcastDashboardController::class.'@index')->name('home');
+    Route::get('/home/edit/profile',\App\Http\Controllers\HomeController::class.'@editProfile')->name('editProfile');
+    Route::post('/home/edit/profile',\App\Http\Controllers\HomeController::class.'@UpdateProfile')->name('UpdateProfile');
     Route::post('social-media-set',\App\Http\Controllers\SocialMediaController::class.'@to_index')->name('social-media.set-index');
     Route::resource('social-media',\App\Http\Controllers\SocialMediaController::class);
     Route::post('podcast-hosts-set',\App\Http\Controllers\PodcastHostController::class.'@to_index')->name('podcast-hosts.set-index');

@@ -11,121 +11,84 @@
     <!-- Page Heading -->
     <div class="row">
         <div class="col-md-6">
-            <h3 class="text-gray-800">Guest</h3>
+            <h3 class="text-gray-800">faqs</h3>
         </div>
         <div class="col-md-6">
             <h6 class="text-right text-sm-start">
-                <a href="#" class="text-capitalize">view site
+                <a href="{{URL::to('/')}}/podcasts/{{$podcast_data->sub_domain}}" class="text-capitalize">view site
                     <i class="fas fa-external-link-alt fa-1x ml-1"></i>
                 </a>
             </h6>
         </div>
     </div>
 
-    <p class="mb-5">Add your socialMedia Links - <a href="{{URL::to('/')}}/podcasts/{{$podcast_data->sub_domain}}" class="text-info">{{URL::to('/')}}/podcasts/{{$podcast_data->sub_domain}}</a>
+    <p class="mb-5">Add your faqs Links - <a href="{{URL::to('/')}}/podcasts/{{$podcast_data->sub_domain}}" class="text-info">{{URL::to('/')}}/podcasts/{{$podcast_data->sub_domain}}</a>
     </p>
-    <a href="{{route('dashboard.social-media.create')}}" class="btn btn-primary btn-icon-split mb-4" onclick="event.preventDefault();
-        document.getElementById('socialmedia-create').submit();">
-        <form id="socialmedia-create" action="{{ route('dashboard.social-media.create') }}" method="POST" class="d-none">
-            <input type="hidden" name="podcast_id" value="{{$podcast_data->id}}">
-            @csrf
-        </form>
+    <a href="{{route('dashboard.podcast-faqs.create')}}" class="btn btn-primary btn-icon-split mb-4" >
+
         <span class="icon text-white-50">
                             <i class="fas fa-plus"></i>
                         </span>
-        <span class="text text-capitalize">feature new guest</span>
+        <span class="text text-capitalize">feature new faqs</span>
     </a>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary text-capitalize">featured guests</h6>
+            <h6 class="m-0 font-weight-bold text-primary text-capitalize">featured faqs</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
-                        <th>Guest Name</th>
-                        <th>Published Date</th>
-                        <th>View</th>
+                        <th>Question</th>
+                        <th>Question Image</th>
+                        <th>Question Answer</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td class="text-capitalize">
-                            <a href="#" class="text-primary ">hazem</a>
-                        </td>
-                        <td>2008/11/13</td>
-                        <td>
-                            <a href="#" class="text-capitalize text-info">
-                                <i class="fas fa-eye fa-1x mr-1"></i>
-                                view
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#" class="text-capitalize text-info">
-                                <i class="fas fa-pencil-alt fa-1x mr-1"></i>
-                                edit
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#" class="text-capitalize text-info">
-                                <i class="fas fa-trash-alt fa-1x mr-1"></i>
-                                delete
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-capitalize">
-                            <a href="#" class="text-primary ">ghanem</a>
-                        </td>
-                        <td>2011/06/27</td>
-                        <td>
-                            <a href="#" class="text-capitalize text-info">
-                                <i class="fas fa-eye fa-1x mr-1"></i>
-                                view
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#" class="text-capitalize text-info">
-                                <i class="fas fa-pencil-alt fa-1x mr-1"></i>
-                                edit
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#" class="text-capitalize text-info">
-                                <i class="fas fa-trash-alt fa-1x mr-1"></i>
-                                delete
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-capitalize">
-                            <a href="#" class="text-primary ">saady</a>
-                        </td>
-                        <td>2011/01/25</td>
-                        <td>
-                            <a href="#" class="text-capitalize text-info">
-                                <i class="fas fa-eye fa-1x mr-1"></i>
-                                view
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#" class="text-capitalize text-info">
-                                <i class="fas fa-pencil-alt fa-1x mr-1"></i>
-                                edit
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#" class="text-capitalize text-info">
-                                <i class="fas fa-trash-alt fa-1x mr-1"></i>
-                                delete
-                            </a>
-                        </td>
-                    </tr>
+                    @foreach($podcast_data->podcastFaqs as $faq)
+                        <tr>
+                            <td class="text-capitalize">
+                                <p class="text-primary ">{{$faq->name}}</p>
+                            </td>
+
+                            <td class="text-capitalize">
+                                <img src="{{$faq->image_path}}" width="100px" alt="">
+                            </td>
+
+                            <td class="text-capitalize">
+                                <p class="text-primary ">{!! $faq->description !!}</p>
+                            </td>
+
+
+
+
+
+                            <td>
+                                <a href="{{route('dashboard.podcast-faqs.edit',$faq->id)}}" class="text-capitalize text-info">
+                                    <i class="fas fa-pencil-alt fa-1x mr-1"></i>
+                                    edit
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{route('dashboard.podcast-faqs.destroy',$faq->id)}}" class="text-capitalize text-info" onclick="event.preventDefault();
+                                document.getElementById('faqs-delete').submit();">
+                                    <i class="fas fa-trash-alt fa-1x mr-1"></i>
+                                    delete
+                                </a>
+                                <form id="faqs-delete" action="{{ route('dashboard.podcast-faqs.destroy',$faq->id) }}" method="POST" class="d-none">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
+                            </td>
+                        </tr>
+
+                    @endforeach
+
                     </tbody>
                 </table>
             </div>

@@ -17,7 +17,7 @@ class CreatePodcastGuestsTable extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('title')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->string('linkedIn_link')->nullable();
             $table->string('facebook_link')->nullable();
             $table->string('instagram_link')->nullable();

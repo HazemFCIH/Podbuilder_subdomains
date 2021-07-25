@@ -18,5 +18,8 @@ class Podcast extends Model
     public function podcastGuests(){
         return $this->hasMany(PodcastGuest::class);
     }
+    public function podcastFaqs(){
+        return $this->hasMany(PodcastFaq::class);
+    }
 }
 

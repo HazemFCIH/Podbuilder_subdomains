@@ -17,7 +17,7 @@ class CreatePodcastFaqsTable extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('image_url')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
 
             $table->bigInteger('podcast_id')->unsigned();
             $table->foreign('podcast_id')->references('id')->on('podcasts')->onDelete('cascade');

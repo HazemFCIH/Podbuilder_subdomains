@@ -27,11 +27,7 @@ class PodcastHostController extends Controller
         return view('front_dashboard.Hosts.index',compact('podcast_data'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         $podcast_data = \Illuminate\Support\Facades\Session::get('podcast_data');

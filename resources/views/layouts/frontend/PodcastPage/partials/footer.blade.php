@@ -16,17 +16,24 @@
                     <div class="col-md-12">
                         <h3 class="footer-heading mb-4">Quick Menu</h3>
                     </div>
-                    <div class="col-md-6 col-lg-6">
+                    <div class="col-md-4 col-lg-4">
                         <ul class="list-unstyled">
                             <!-- DASHBOARD ATTRIBUTE! Add depending on pages created -->
                             <li><a href="{{route('podcasts.show',$podcast->sub_domain)}}">Home</a></li>
 
                         </ul>
                     </div>
-                    <div class="col-md-6 col-lg-6">
+                    <div class="col-md-4 col-lg-4">
                         <ul class="list-unstyled">
                             <!-- DASHBOARD ATTRIBUTE! Add depending on pages created -->
                             <li><a href="{{route('podcasts.about.index',$podcast->sub_domain)}}">About Us</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-lg-4">
+                        <ul class="list-unstyled">
+                            <!-- DASHBOARD ATTRIBUTE! Add depending on pages created -->
+                            <li><a href="{{route('podcasts.faqs.index',$podcast->sub_domain)}}">FAQs</a></li>
 
                         </ul>
                     </div>
@@ -52,6 +59,8 @@
             </div>
 
             <div class="col-lg-4 mb-5 mb-lg-0">
+                @if($socielmedia)
+
                 <div class="row mb-5">
                     <div class="col-md-12">
                         <h3 class="footer-heading mb-4">Listen On Podcast Platforms</h3>
@@ -77,6 +86,8 @@
                         </ul>
                     </div>
                 </div>
+                @endif
+
             </div>
 
 
