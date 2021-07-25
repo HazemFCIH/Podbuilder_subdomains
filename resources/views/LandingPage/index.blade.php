@@ -1,5 +1,11 @@
 @extends('layouts.frontend.LandingPage.partials.app')
 @section('top-section')
+    <div class="site-blocks-cover overlay" style="background-image: url({{asset('assets/frontend/images/hero_bg_3.jpg')}});" data-aos="fade"
+         data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row align-items-center justify-content-center text-center">
+
+
     <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
         <h2 class="text-white font-weight-light mb-2 display-4">Podbuilder is your powerful tool to build your
             podcast presence
@@ -11,7 +17,9 @@
             <p><a href="{{route('login')}}" class="btn btn-info btn-sm py-3 px-4 mt-5 small">Create my Podsite</a></p>
 
         @endauth
-    </div>sdsdsds
+    </div>
+            </div>
+        </div>
 @endsection
 @section('mid-section')
     <div class="col-lg-5 d-none d-lg-block side_image">
