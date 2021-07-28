@@ -12,9 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::domain('{subdomain}.'.config('app.short_url'))->group(function ($subdomain) {
-    Route::get('/', function ($subdomain) {
-        return $subdomain;});
+Route::domain('{subdomain}.'.config('app.short_url'))->group(function () {
+    Route::get('/', [App\Http\Controllers\PodcastController::class, 'subdomain_index'])->name('subdomain_index');
+
 });
 Route::get('/', function () {
     return view('LandingPage.index');
