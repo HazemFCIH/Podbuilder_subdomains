@@ -11,7 +11,7 @@ class PodcastHost extends Model
     protected $guarded = [];
     protected $appends = ['image_path'];
     public function getImagePathAttribute(){
-        return asset('uploads/user_images/'.$this->image_url);
+        return "https://pobuilder.arcast.me/uploads/user_images/".$this->image_url;
     }
     public function podcast(){
     return $this->belongsTo(Podcast::class);
