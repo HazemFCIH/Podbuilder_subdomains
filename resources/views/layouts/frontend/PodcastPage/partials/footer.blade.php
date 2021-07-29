@@ -19,7 +19,7 @@
                     <div class="col-md-4 col-lg-4">
                         <ul class="list-unstyled">
                             <!-- DASHBOARD ATTRIBUTE! Add depending on pages created -->
-                            <li><a href="{{route('',$podcast->sub_domain)}}">Home</a></li>
+                            <li><a href="{{route('subdomain_index',$podcast->sub_domain)}}">Home</a></li>
 
                         </ul>
                     </div>
