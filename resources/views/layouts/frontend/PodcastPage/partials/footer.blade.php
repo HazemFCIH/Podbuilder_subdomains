@@ -103,7 +103,7 @@
                         document.write(new Date().getFullYear());
                         /* RSS ATTRIBUTE! Podcast Name */
                     </script> All rights reserved | {{$podcast->podcast_title}} Website is powered
-                    by <a href="#" target="_blank">Podbuilder from arcast</a>
+                    by <a href="https://podbuilder.arcast.me" target="_blank">Podbuilder from arcast</a>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </p>
             </div>
