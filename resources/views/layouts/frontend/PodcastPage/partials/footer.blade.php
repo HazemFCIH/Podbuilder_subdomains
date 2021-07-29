@@ -19,21 +19,21 @@
                     <div class="col-md-4 col-lg-4">
                         <ul class="list-unstyled">
                             <!-- DASHBOARD ATTRIBUTE! Add depending on pages created -->
-                            <li><a href="{{route('subdomain_index')}}">Home</a></li>
+                            <li><a href="{{route('',$podcast->sub_domain)}}">Home</a></li>
 
                         </ul>
                     </div>
                     <div class="col-md-4 col-lg-4">
                         <ul class="list-unstyled">
                             <!-- DASHBOARD ATTRIBUTE! Add depending on pages created -->
-                            <li><a href="{{route('about.index')}}">About Us</a></li>
+                            <li><a href="{{route('about.index',$podcast->sub_domain)}}">About Us</a></li>
 
                         </ul>
                     </div>
                     <div class="col-md-4 col-lg-4">
                         <ul class="list-unstyled">
                             <!-- DASHBOARD ATTRIBUTE! Add depending on pages created -->
-                            <li><a href="{{route('faqs.index')}}">FAQs</a></li>
+                            <li><a href="{{route('faqs.index',$podcast->sub_domain)}}">FAQs</a></li>
 
                         </ul>
                     </div>

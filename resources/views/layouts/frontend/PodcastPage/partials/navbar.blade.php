@@ -16,7 +16,7 @@
 
             <div class="col-3" data-aos="fade-down">
                 <!-- RSS ATTRIBUTE! Podcast Name -->
-                <h1><a href="{{route('subdomain_index')}}" class="text-white h2">{{$podcast->podcast_title}}</a></h1>
+                <h1><a href="{{route('subdomain_index',$podcast->sub_domain)}}" class="text-white h2">{{$podcast->podcast_title}}</a></h1>
             </div>
             <div class="col-9" data-aos="fade-down">
                 <nav class="site-navigation position-relative text-right text-md-right" role="navigation">
@@ -25,10 +25,10 @@
 
                     <ul class="site-menu js-clone-nav d-none">
                         <li class="active">
-                            <a href="{{route('subdomain_index')}}">Home</a>
+                            <a href="{{route('subdomain_index',$podcast->sub_domain)}}">Home</a>
                         </li>
-                        <li><a href="{{route('about.index')}}">About</a></li>
-                        <li><a href="{{route('faqs.index')}}">FAQs</a></li>
+                        <li><a href="{{route('about.index',$podcast->sub_domain)}}">About</a></li>
+                        <li><a href="{{route('faqs.index',$podcast->sub_domain)}}">FAQs</a></li>
 
 
                     </ul>
