@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 Route::domain('{subdomain}.'.config('app.short_url'))->group(function () {
     Route::get('/', [App\Http\Controllers\PodcastController::class, 'subdomain_index'])->name('subdomain_index');
+    Route::resource('about', \App\Http\Controllers\PodcastAboutController::class)->only('index');
+    Route::resource('episode', \App\Http\Controllers\EpisodeController::class)->only('show');
+    Route::resource('faqs', \App\Http\Controllers\PodcastFaqsController::class)->only('index');
 
 });
 Route::get('/', function () {
@@ -30,9 +33,7 @@ Route::get('/podcast-page', function (){
     return view('PodcastPage.index');
 });
 Route::resource('podcasts',\App\Http\Controllers\PodcastController::class);
-Route::resource('podcasts.about', \App\Http\Controllers\PodcastAboutController::class)->only('index');
-Route::resource('podcasts.episode', \App\Http\Controllers\EpisodeController::class)->only('show');
-Route::resource('podcasts.faqs', \App\Http\Controllers\PodcastFaqsController::class)->only('index');
+
 
 Route::prefix('dashboard')->middleware('auth')->name('dashboard.')->group(function () {
 
