@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 class EpisodeController extends Controller
 {
 
-    public function show($sub_domain,$episode_number)
+    public function show($subdomain,$episode)
     {
-        $podcast = Podcast::where('sub_domain', $sub_domain)->firstOrFail();
+        $podcast = Podcast::where('sub_domain', $subdomain)->firstOrFail();
         $socielmedia = $podcast->socialmedias->first();
         view()->share([
             'podcast'=> $podcast,
@@ -20,12 +20,12 @@ class EpisodeController extends Controller
 
         $f = \FeedReader::read($podcast->rss_feed);
         $f->handle_content_type();
-       if ( !is_numeric($episode_number) || ((int)$episode_number < 0 || (int)$episode_number > (int)$f->get_item_quantity()  )){
+       if ( !is_numeric($episode) || ((int)$episode < 0 || (int)$episode > (int)$f->get_item_quantity()  )){
 
         abort(404, 'Page not found');
        }
 $episode = [];
-        $item = $f->get_items()[$episode_number];
+        $item = $f->get_items()[$episode];
             $episode['episode_author_name'] = $item->get_author()->get_name();
             $episode['episode_title'] = $item->get_title();
             $episode['episode_description'] = $item->get_description();
